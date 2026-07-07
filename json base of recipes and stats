@@ -47,7 +47,59 @@
                     "products": {
                         "dough": 1
                     }
-                }
+                },
+                "colored_concrete powder": {
+                    "ingredients": {
+                        "gravel": 4,
+                        "sand": 4,
+                        "dye": 1
+                    },
+                    "products": {
+                        "concrete powder": 8
+                    }
+                },
+                "copper_ingot": {
+                    "ingredients": {
+                        "raw copper": 1
+                    },
+                    "products": {
+                        "copper_ingot": 1
+                    }
+                },
+                "zinc_ingot": {
+                    "ingredients": {
+                        "raw zinc": 1
+                    },
+                    "products": {
+                        "zinc_ingot": 1
+                    }
+                },
+                "refined radiance": {
+                    "ingredients": {
+                        "glowstone dust": 4
+                    },
+                    "products": {
+                        "refined radiance": 1
+                    }
+                },
+                "chromatic compound": {
+                    "ingredients":{
+                        "obsidian dust": 4
+                    },
+                    "products": {
+                        "chromatic compound": 1
+                    }
+                },
+                "rose_quartz": {
+                    "ingredients": {
+                        "quartz": 1,
+                        "redstone": 1
+                    },
+                    "products": {
+                        "rose_quartz": 1
+                    }
+                },
+                ""
             }
         }
     }
