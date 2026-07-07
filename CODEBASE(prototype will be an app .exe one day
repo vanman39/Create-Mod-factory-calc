@@ -10,8 +10,14 @@ while 1 + 1 == 2:
     for machine_name in data["machines"].keys():
         print(f"- {machine_name}")
     machine_choice = input("Enter the machine name from the list above: ")
+    recipe_map = {}
+    for recipe_key in data["machines"][machine_choice]["recipes"].keys():
+        product_dict = data["machines"][machine_choice]["recipes"][recipe_key]["products"]
+        product_name = list(product_dict.keys())[0]
+        recipe_map[product_name] = recipe_key
     for recipe_name in data["machines"][machine_choice]["recipes"].keys():
-        product_name = data["machines"][machine_choice]["recipes"][recipe_name]["products"]
+        product_dict = data["machines"][machine_choice]["recipes"][recipe_name]["products"]
+        product_name = list(product_dict.keys())[0]
         print(f"- {product_name}")
     recipe_choice = input("Enter the recipe name from the list above: ")
     target_rpm = int(input("Enter the target RPM: "))
