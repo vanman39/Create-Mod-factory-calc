@@ -1,0 +1,2 @@
+# Create-Mod-factory-calc
+A calculator for create mod factories to know how many you need to make so many items per minute or hour.
