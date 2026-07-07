@@ -99,7 +99,33 @@
                         "rose_quartz": 1
                     }
                 },
-                ""
+                "polished rose quartz": {
+                    "ingredients": {
+                        "rose_quartz": 1,
+                        "sand paper": 1
+                    },
+                    "products": {
+                        "polished_rose_quartz": 1
+                    }
+                },
+                "blaze cake base": {
+                    "ingredients": {
+                        "cinder flour": 1,
+                        "sugar": 1,
+                        "egg": 1
+                    },
+                    "products": {
+                        "blaze cake base": 1
+                    }
+                },
+                "ender dust": {
+                    "ingredients": {
+                        "ender pearl": 1
+                    },
+                    "products": {
+                        "ender dust": 1
+                    }
+                }
             }
         }
     }
