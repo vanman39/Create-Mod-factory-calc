@@ -6,22 +6,58 @@
             "cycle_amount_per_second": 0.083,
             "recipes": {
                 "iron ingot": {
-                    "iron sheet": 1
+                    "ingredients": {
+                       "iron ingot": 1
+                    },
+                    "products": {
+                        "iron sheet": 1
+                    },
+                    "heated": false
                 },
                 "brass ingot": {
-                    "brass sheet": 1
+                    "ingredients":{
+                        "brass ingot": 1
+                    },
+                    "products": {
+                        "brass sheet": 1
+                    },
+                    "heated":false
                 },
                 "copper_ingot": {
-                    "copper sheet": 1
+                    "ingredients": {
+                        "copper ingot": 1
+                    },
+                    "products": {
+                        "copper sheet": 1
+                    },
+                    "heated":false
                 },
                 "gold ingot": {
-                    "gold sheet": 1
+                    "ingredients": {
+                        "gold ingot": 1
+                    },
+                    "products": {
+                        "gold sheet": 1
+                    },
+                    "heated":false
                 },
                 "lapis lazuli block": {
-                    "lapis lazuli sheet": 1
+                    "ingredients": {
+                        "lapis lazuli block": 1
+                    },
+                    "products": {
+                        "lapis lazuli sheet": 1
+                    },
+                    "heated": false
                 },
                 "Sugar cane": {
-                    "Paper": 1
+                    "ingredients": {
+                        "sugar cane": 1
+                    },
+                    "products": {
+                        "sugar sheet": 1
+                    },
+                    "heated":false
                 }
             }
         },
@@ -163,7 +199,7 @@
                     "products": {
                         "chocolate": 1
                     },
-                "heated": true
+                    "heated": true
                 }
             }
         }
