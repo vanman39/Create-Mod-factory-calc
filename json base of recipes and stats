@@ -37,16 +37,21 @@
                     },
                     "products": {
                         "andesite alloy": 2
-                    }
+                    },
+                    "heated": false
                 },
                 "dough": {
                     "ingredients": {
                         "wheat flour": 3,
-                        "water bucket": 1
+                        "water bucket": {
+                            "amount": 0.25,
+                            "water": true
+                        }
                     },
                     "products": {
                         "dough": 1
-                    }
+                    },
+                    "heated": false
                 },
                 "colored_concrete powder": {
                     "ingredients": {
@@ -56,7 +61,8 @@
                     },
                     "products": {
                         "concrete powder": 8
-                    }
+                    },
+                    "heated": false
                 },
                 "copper_ingot": {
                     "ingredients": {
@@ -64,7 +70,8 @@
                     },
                     "products": {
                         "copper_ingot": 1
-                    }
+                    },
+                    "heated": true
                 },
                 "zinc_ingot": {
                     "ingredients": {
@@ -72,15 +79,8 @@
                     },
                     "products": {
                         "zinc_ingot": 1
-                    }
-                },
-                "refined radiance": {
-                    "ingredients": {
-                        "glowstone dust": 4
                     },
-                    "products": {
-                        "refined radiance": 1
-                    }
+                    "heated": true
                 },
                 "chromatic compound": {
                     "ingredients":{
@@ -88,7 +88,8 @@
                     },
                     "products": {
                         "chromatic compound": 1
-                    }
+                    },
+                    "heated": false
                 },
                 "rose_quartz": {
                     "ingredients": {
@@ -97,7 +98,8 @@
                     },
                     "products": {
                         "rose_quartz": 1
-                    }
+                    },
+                    "heated": false
                 },
                 "polished rose quartz": {
                     "ingredients": {
@@ -106,7 +108,8 @@
                     },
                     "products": {
                         "polished_rose_quartz": 1
-                    }
+                    },
+                    "heated": false
                 },
                 "blaze cake base": {
                     "ingredients": {
@@ -116,7 +119,8 @@
                     },
                     "products": {
                         "blaze cake base": 1
-                    }
+                    },
+                    "heated": false
                 },
                 "ender dust": {
                     "ingredients": {
@@ -124,7 +128,42 @@
                     },
                     "products": {
                         "ender dust": 1
-                    }
+                    },
+                    "heated": true
+                }, 
+                "builder's tea": {
+                    "ingredients": {
+                        "leaf block": 1,
+                        "water bucket": {
+                            "amount": 0.25,
+                            "water": true
+                        },
+                        "bucket of milk": {
+                            "amount": 0.25,
+                            "milk": true
+                        }
+                    },
+                    "products": {
+                        "builder's tea": {
+                            "amount": 1,
+                            "tea": true
+                        }
+                    },
+                    "heated": true
+                },
+                "chocolate": {
+                    "ingredients": {
+                        "cocoa beans": 1,
+                        "sugar": 1,
+                        "milk bucket": {
+                            "amount": 0.25,
+                            "milk": true
+                        }
+                    },
+                    "products": {
+                        "chocolate": 1
+                    },
+                "heated": true
                 }
             }
         }
