@@ -1,0 +1,33 @@
+{
+    "machines": {
+        "mechanical press": {
+            "su_base": 4,
+            "max_rpm": 256,
+            "cycle_amount_per_second": 0.083,
+            "recipes": {
+                "iron ingot": {
+                    "iron sheet": 1
+                },
+                "brass ingot": {
+                    "brass sheet": 1
+                },
+                "copper_ingot": {
+                    "copper sheet": 1,
+                "gold ingot": {
+                    "gold sheet": 1,
+                "lapis lazuli block": {
+                    "lapis lazuli sheet": 1,
+                "Sugar cane": {
+                    "Paper": 1
+                }
+                }
+                }
+            }
+        },
+        "mechcanical_mixer": {
+            "su_base": 4,
+            "max_rpm": 256
+            "items_per_second_at_1rpm": 
+        }
+    }
+}
