@@ -12,22 +12,43 @@
                     "brass sheet": 1
                 },
                 "copper_ingot": {
-                    "copper sheet": 1,
+                    "copper sheet": 1
+                },
                 "gold ingot": {
-                    "gold sheet": 1,
+                    "gold sheet": 1
+                },
                 "lapis lazuli block": {
-                    "lapis lazuli sheet": 1,
+                    "lapis lazuli sheet": 1
+                },
                 "Sugar cane": {
                     "Paper": 1
                 }
-                }
-                }
             }
         },
-        "mechcanical_mixer": {
+        "mechanical mixer": {
             "su_base": 4,
-            "max_rpm": 256
-            "items_per_second_at_1rpm": 
+            "max_rpm": 256,
+            "cycle_amount_per_second": 0.01,
+            "recipes": {
+                "andesite alloy": {
+                    "ingredients": {
+                        "andesite": 2,
+                        "iron nugget": 2
+                    },
+                    "products": {
+                        "andesite alloy": 2
+                    }
+                },
+                "dough": {
+                    "ingredients": {
+                        "wheat flour": 3,
+                        "water bucket": 1
+                    },
+                    "products": {
+                        "dough": 1
+                    }
+                }
+            }
         }
     }
 }
