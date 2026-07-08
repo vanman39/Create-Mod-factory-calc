@@ -5,7 +5,7 @@
             "max_rpm": 256,
             "cycle_amount_per_second": 0.083,
             "recipes": {
-                "iron ingot": {
+                "iron sheet": {
                     "ingredients": {
                        "iron ingot": 1
                     },
@@ -14,7 +14,7 @@
                     },
                     "heated": false
                 },
-                "brass ingot": {
+                "brass sheet": {
                     "ingredients":{
                         "brass ingot": 1
                     },
@@ -23,7 +23,7 @@
                     },
                     "heated":false
                 },
-                "copper_ingot": {
+                "copper sheet": {
                     "ingredients": {
                         "copper ingot": 1
                     },
@@ -32,7 +32,7 @@
                     },
                     "heated":false
                 },
-                "gold ingot": {
+                "gold sheet": {
                     "ingredients": {
                         "gold ingot": 1
                     },
@@ -41,7 +41,7 @@
                     },
                     "heated":false
                 },
-                "lapis lazuli block": {
+                "lapis lazuli sheet": {
                     "ingredients": {
                         "lapis lazuli block": 1
                     },
@@ -50,7 +50,7 @@
                     },
                     "heated": false
                 },
-                "Sugar cane": {
+                "paper": {
                     "ingredients": {
                         "sugar cane": 1
                     },
@@ -198,6 +198,159 @@
                     },
                     "products": {
                         "chocolate": 1
+                    },
+                    "heated": true
+                }
+            }
+        },
+        "bulk washing": {
+            "su_base": 1,
+            "max_rpm": 256,
+            "cycle_amount_per_second": 0.2,
+            "recipes": {
+                "concrete": {
+                    "ingredients": {
+                        "concrete powder": 1
+                    },
+                    "products": {
+                        "concrete": 1
+                    },
+                    "heated": false
+                },
+                "copper nugget": {
+                    "ingredients": {
+                        "crushed copper ore": 1
+                    },
+                    "products": {
+                        "copper nugget": 9,
+                        "clay ball": 0.25
+                    },
+                    "heated": false
+                },
+                "gold nugget": {
+                    "ingredients": {
+                        "crushed gold ore": 1
+                    },
+                    "products": {
+                        "gold nugget": 9,
+                        "nether quartz": 0.25
+                    },
+                    "heated": false
+                },
+                "iron nugget": {
+                    "ingredients": {
+                        "crushed iron ore": 1
+                    },
+                    "products": {
+                        "iron nugget": 9
+                    },
+                    "heated": false
+                },
+                "zinc nugget": {
+                    "ingredients": {
+                        "crushed zinc ore": 1
+                    },
+                    "products": {
+                        "zinc nugget": 9,
+                        "gunpowder": 0.25
+                    },
+                    "heated": false
+                },
+                "glass": {
+                    "ingredients": {
+                        "stained glass": 1
+                    },
+                    "products": {
+                        "glass": 1
+                    },
+                    "heated": false
+                },
+                "flint": {
+                    "ingredients": {
+                        "gravel": 1
+                    },
+                    "products": {
+                        "flint": 1,
+                        "iron nugget": 0.25
+                    },
+                    "heated": false
+                },
+                "packed ice": {
+                    "ingredients": {
+                        "ice": 1
+                    },
+                    "products": {
+                        "packed ice": 1
+                    },
+                    "heated": false
+                },
+                "obsidian" : {
+                    "ingredients": {
+                        "magma block": 1
+                    },
+                    "products": {
+                        "obsidian": 1
+                    },
+                    "heated": false
+                }
+            }
+        },
+        "bulk blasting": {
+            "su_base": 1,
+            "max_rpm": 256,
+            "cycle_amount_per_second": 0.2,
+            "recipes": {
+                "iron ingot": {
+                    "ingredients": {
+                        "iron ore": 1
+                    },
+                    "products": {
+                        "iron ingot": 1
+                    },
+                    "heated": true
+                },
+                "copper ingot": {
+                    "ingredients": {
+                        "copper ore": 1
+                    },
+                    "products": {
+                        "copper ingot": 1
+                    },
+                    "heated": true
+                },
+                "gold ingot": {
+                    "ingredients": {
+                        "gold ore": 1
+                    },
+                    "products": {
+                        "gold ingot": 1
+                    },
+                    "heated": true
+                },
+                "zinc ingot": {
+                    "ingredients": {
+                        "zinc ore": 1
+                    },
+                    "products": {
+                        "zinc ingot": 1
+                    },
+                    "heated": true
+                },
+                "stone": {
+                    "ingredients": {
+                        "cobblestone": 1
+                    },
+                    "products": {
+                        "stone": 1
+                    },
+                    "heated": true
+                },
+                "glass": {
+                    "ingredients": {
+                        "sand": 1
+                    },
+                    "products": {
+                        "glass": 1
                     },
                     "heated": true
                 }
