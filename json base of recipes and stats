@@ -454,7 +454,7 @@
             "su_base": 16,
             "max_rpm": 256,
             "cycle_amount_per_second": 0.25,
-            "recipe": {
+            "recipes": {
                 "crushed iron ore": {
                     "ingredients": {
                         "raw iron": 1
@@ -488,6 +488,51 @@
                     },
                     "products": {
                         "crushed zinc ore": 2
+                    },
+                    "heated": false
+                },
+                "gravel": {
+                    "ingredients": {
+                        "cobblestone": 1
+                    },
+                    "products": {
+                        "gravel": 1
+                    },
+                    "heated": false
+                },
+                "sand": {
+                    "ingredients": {
+                        "gravel": 1
+                    },
+                    "products": {
+                        "sand": 1
+                    },
+                    "heated": false
+                },
+                "clay": {
+                    "ingredients": {
+                        "sand": 1
+                    },
+                    "products": {
+                        "clay": 1
+                    },
+                    "heated": false
+                },
+                "blaze powder": {
+                    "ingredients": {
+                        "blaze rod": 1
+                    },
+                    "products": {
+                        "blaze powder": 4
+                    },
+                    "heated": false
+                },
+                "bone meal": {
+                    "ingrdients": {
+                        "bone": 1
+                    },
+                    "products": {
+                        "bone meal": 5
                     },
                     "heated": false
                 }
