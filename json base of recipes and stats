@@ -1,6 +1,7 @@
 {
     "machines": {
         "mechanical press": {
+            "rpm_base": 1,
             "su_base": 4,
             "max_rpm": 256,
             "cycle_amount_per_second": 0.083,
@@ -62,6 +63,7 @@
             }
         },
         "mechanical mixer": {
+            "rpm_base": 1,
             "su_base": 4,
             "max_rpm": 256,
             "cycle_amount_per_second": 0.01,
@@ -204,6 +206,7 @@
             }
         },
         "bulk washing": {
+            "rpm_base": 1,
             "su_base": 1,
             "max_rpm": 256,
             "cycle_amount_per_second": 0.2,
@@ -296,6 +299,7 @@
             }
         },
         "bulk blasting": {
+            "rpm_base": 1,
             "su_base": 1,
             "max_rpm": 256,
             "cycle_amount_per_second": 0.2,
@@ -357,6 +361,7 @@
             }
         },
         "bulk smoking": {
+            "rpm_base": 1,
             "su_base": 1,
             "max_rpm": 256,
             "cycle_amount_per_second": 0.2,
@@ -441,6 +446,50 @@
                         "cooked rabbit": 1
                     },
                     "heated": true
+                }
+            }
+        },
+        "crushing wheels": {
+            "rpm_base": 16,
+            "su_base": 16,
+            "max_rpm": 256,
+            "cycle_amount_per_second": 0.25,
+            "recipe": {
+                "crushed iron ore": {
+                    "ingredients": {
+                        "raw iron": 1
+                    },
+                    "products": {
+                        "crushed iron ore": 2
+                    },
+                    "heating": false
+                },
+                "crushed copper ore": {
+                    "ingredients": {
+                        "raw copper": 1
+                    },
+                    "products": {
+                        "crushed copper ore": 2
+                    },
+                    "heated": false
+                },
+                "crushed gold ore": {
+                    "ingredients": {
+                        "gold ore": 1,
+                    },
+                    "products": {
+                        "crushed gold ore": 2
+                    },
+                    "heated": false
+                },
+                "crushed zinc ore": {
+                    "ingredients": {
+                        "zinc ore": 1
+                    },
+                    "products": {
+                        "crushed zinc ore": 2
+                    },
+                    "heated": false
                 }
             }
         }
