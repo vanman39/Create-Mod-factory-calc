@@ -462,6 +462,9 @@
                     "products": {
                         "crushed iron ore": 2
                     },
+                    "byproducts": {
+                        "none": 1
+                    },
                     "heating": false
                 },
                 "crushed copper ore": {
@@ -471,14 +474,20 @@
                     "products": {
                         "crushed copper ore": 2
                     },
+                    "byproducts": {
+                        "none": 1
+                    },
                     "heated": false
                 },
                 "crushed gold ore": {
                     "ingredients": {
-                        "gold ore": 1,
+                        "gold ore": 1
                     },
                     "products": {
                         "crushed gold ore": 2
+                    },
+                    "byproducts": {
+                        "none": 1
                     },
                     "heated": false
                 },
@@ -488,6 +497,9 @@
                     },
                     "products": {
                         "crushed zinc ore": 2
+                    },
+                    "byproducts": {
+                        "none": 1
                     },
                     "heated": false
                 },
@@ -533,6 +545,15 @@
                     },
                     "products": {
                         "bone meal": 5
+                    },
+                    "heated": false
+                },
+                "coal dust": {
+                    "ingredients": {
+                        "coal": 1
+                    },
+                    "products": {
+                        "coal dust": 1
                     },
                     "heated": false
                 }
