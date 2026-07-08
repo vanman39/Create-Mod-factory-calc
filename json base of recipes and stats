@@ -355,6 +355,94 @@
                     "heated": true
                 }
             }
+        },
+        "bulk smoking": {
+            "su_base": 1,
+            "max_rpm": 256,
+            "cycle_amount_per_second": 0.2,
+            "recipes": {
+                "baked potato": {
+                    "ingredients": {
+                        "potato": 1
+                    },
+                    "products": {
+                        "baked potato": 1
+                    },
+                    "heated": true
+                },
+                "dried kelp": {
+                    "ingredients": {
+                        "kelp": 1
+                    },
+                    "products": {
+                        "dried kelp": 1
+                    },
+                    "heated": true
+                },
+                "steak": {
+                    "ingredients": {
+                        "raw beef": 1
+                    },
+                    "products": {
+                        "steak": 1
+                    },
+                    "heated": true
+                },
+                "cooked porkchop": {
+                    "ingredients": {
+                        "raw porkchop": 1
+                    },
+                    "products": {
+                        "cooked porkchop": 1
+                    },
+                    "heated": true
+                },
+                "cooked chicken": {
+                    "ingredients": {
+                        "raw chicken": 1
+                    },
+                    "products": {
+                        "cooked chicken": 1
+                    },
+                    "heated": true
+                },
+                "cooked mutton": {
+                    "ingredients": {
+                        "raw mutton": 1
+                    },
+                    "products": {
+                        "cooked mutton": 1
+                    },
+                    "heated": true
+                },
+                "cooked cod": {
+                    "ingredients": {
+                        "raw cod": 1
+                    },
+                    "products": {
+                        "cooked cod": 1
+                    },
+                    "heated": true
+                },
+                "cooked salmon": {
+                    "ingredients": {
+                        "raw salmon": 1
+                    },
+                    "products": {
+                        "cooked salmon": 1
+                    },
+                    "heated": true
+                },
+                "cooked rabbit": {
+                    "ingredients": {
+                        "raw rabbit": 1
+                    },
+                    "products": {
+                        "cooked rabbit": 1
+                    },
+                    "heated": true
+                }
+            }
         }
     }
 }
