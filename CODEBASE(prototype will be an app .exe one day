@@ -27,7 +27,6 @@ while 1 + 1 == 2:
     items_produced = target_rpm * data["machines"][machine_choice]["cycle_amount_per_second"]
     machines_needed = math.ceil(items_wanted / items_produced)
     print(f"You will need {machines_needed} {machine_choice} machines to produce {items_wanted * 3600} items per hour at {target_rpm} RPM.")
-    print("Make sure you have automated: ")
     heated = data["machines"][machine_choice]["recipes"][recipe_choice]["heated"]
     print(f"- Heated: {heated}")
     print("Ingredients: ")
