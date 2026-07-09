@@ -346,7 +346,7 @@
                         "zinc nugget": 9
                     },
                     "byproducts": {
-                        "gun powder": 0.25
+                        "gunpowder": 0.25
                     },
                     "heated": false
                 },
@@ -394,7 +394,7 @@
                         "flint": 1
                     },
                     "byproducts": {
-                        "iron nuggget": 0.25
+                        "iron nugget": 0.25
                     },
                     "heated": false
                 },
@@ -724,7 +724,7 @@
                 },
                 "cinder flour": {
                     "ingredients": {
-                        "netherack": 1
+                        "netherrack": 1
                     },
                     "products": {
                         "cinder flour": 1
