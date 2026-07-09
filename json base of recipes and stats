@@ -13,6 +13,9 @@
                     "products": {
                         "iron sheet": 1
                     },
+                    "byproducts": {
+                        "none": 1
+                    },
                     "heated": false
                 },
                 "brass sheet": {
@@ -21,6 +24,9 @@
                     },
                     "products": {
                         "brass sheet": 1
+                    },
+                    "byproducts": {
+                        "none": 1
                     },
                     "heated":false
                 },
@@ -31,6 +37,9 @@
                     "products": {
                         "copper sheet": 1
                     },
+                    "byproducts": {
+                        "none": 1
+                    },
                     "heated":false
                 },
                 "gold sheet": {
@@ -39,6 +48,9 @@
                     },
                     "products": {
                         "gold sheet": 1
+                    },
+                    "byproducts": {
+                        "none": 1
                     },
                     "heated":false
                 },
@@ -49,6 +61,18 @@
                     "products": {
                         "lapis lazuli sheet": 1
                     },
+                    "byproducts": {
+                        "none": 1
+                    },
+                    "heated": false
+                },
+                "netherite sheet": {
+                    "ingredients": {
+                        "netherite ingot": 1
+                    },
+                    "products": {
+                        "netherite sheet": 1
+                    },
                     "heated": false
                 },
                 "paper": {
@@ -57,6 +81,9 @@
                     },
                     "products": {
                         "paper": 1
+                    },
+                    "byproducts": {
+                        "none": 1
                     },
                     "heated":false
                 }
@@ -76,6 +103,9 @@
                     "products": {
                         "andesite alloy": 2
                     },
+                    "byproducts": {
+                        "none": 1
+                    },
                     "heated": false
                 },
                 "dough": {
@@ -89,6 +119,9 @@
                     "products": {
                         "dough": 1
                     },
+                    "byproducts": {
+                        "none": 1
+                    },
                     "heated": false
                 },
                 "colored_concrete powder": {
@@ -100,6 +133,9 @@
                     "products": {
                         "concrete powder": 8
                     },
+                    "byproducts": {
+                        "none": 1
+                    },
                     "heated": false
                 },
                 "copper_ingot": {
@@ -109,7 +145,23 @@
                     "products": {
                         "copper_ingot": 1
                     },
+                    "byproducts": {
+                        "none": 1
+                    },
                     "heated": true
+                },
+                "brass ingot": {
+                    "ingredients": {
+                        "copper ingot": 1,
+                        "zinc ingot": 1
+                    },
+                    "products": {
+                        "brass ingot": 2
+                    },
+                    "byproducts": {
+                        "none": 1
+                    },
+                    "heated": 1
                 },
                 "zinc_ingot": {
                     "ingredients": {
@@ -117,6 +169,9 @@
                     },
                     "products": {
                         "zinc_ingot": 1
+                    },
+                    "byproducts": {
+                        "none": 1
                     },
                     "heated": true
                 },
@@ -126,6 +181,9 @@
                     },
                     "products": {
                         "chromatic compound": 1
+                    },
+                    "byproducts": {
+                        "none": 1
                     },
                     "heated": false
                 },
@@ -137,6 +195,9 @@
                     "products": {
                         "rose_quartz": 1
                     },
+                    "byproducts": {
+                        "none": 1
+                    },
                     "heated": false
                 },
                 "polished rose quartz": {
@@ -147,6 +208,9 @@
                     "products": {
                         "polished_rose_quartz": 1
                     },
+                    "byproducts": {
+                        "none": 1
+                    },
                     "heated": false
                 },
                 "blaze cake base": {
@@ -154,6 +218,9 @@
                         "cinder flour": 1,
                         "sugar": 1,
                         "egg": 1
+                    },
+                    "byproducts": {
+                        "none": 1
                     },
                     "products": {
                         "blaze cake base": 1
@@ -166,6 +233,9 @@
                     },
                     "products": {
                         "ender dust": 1
+                    },
+                    "byproducts": {
+                        "none": 1
                     },
                     "heated": true
                 }, 
@@ -187,6 +257,9 @@
                             "tea": true
                         }
                     },
+                    "byproducts": {
+                        "none": 1
+                    },
                     "heated": true
                 },
                 "chocolate": {
@@ -200,6 +273,9 @@
                     },
                     "products": {
                         "chocolate": 1
+                    },
+                    "byproducts": {
+                        "none": 1
                     },
                     "heated": true
                 }
@@ -218,6 +294,9 @@
                     "products": {
                         "concrete": 1
                     },
+                    "byproducts": {
+                        "none": 1
+                    },
                     "heated": false
                 },
                 "copper nugget": {
@@ -225,7 +304,9 @@
                         "crushed copper ore": 1
                     },
                     "products": {
-                        "copper nugget": 9,
+                        "copper nugget": 9
+                    },
+                    "byproducts": {
                         "clay ball": 0.25
                     },
                     "heated": false
@@ -235,7 +316,9 @@
                         "crushed gold ore": 1
                     },
                     "products": {
-                        "gold nugget": 9,
+                        "gold nugget": 9
+                    },
+                    "byproducts": {
                         "nether quartz": 0.25
                     },
                     "heated": false
@@ -247,6 +330,9 @@
                     "products": {
                         "iron nugget": 9
                     },
+                    "byproducts": {
+                        "none": 1
+                    },
                     "heated": false
                 },
                 "zinc nugget": {
@@ -254,8 +340,10 @@
                         "crushed zinc ore": 1
                     },
                     "products": {
-                        "zinc nugget": 9,
-                        "gunpowder": 0.25
+                        "zinc nugget": 9
+                    },
+                    "byproducts": {
+                        "gun powder": 0.25
                     },
                     "heated": false
                 },
@@ -266,6 +354,33 @@
                     "products": {
                         "glass": 1
                     },
+                    "byproducts": {
+                        "none": 1
+                    },
+                    "heated": false
+                },
+                "nether quartz": {
+                    "ingredients": {
+                        "soul sand": 1
+                    },
+                    "products": {
+                        "nether quartz": 1
+                    },
+                    "byproducts": {
+                        "gold nugget": 0.25
+                    },
+                    "heated": false
+                },
+                "gold nugget (red sand)": {
+                    "ingredients": {
+                        "red sand": 1
+                    },
+                    "products": {
+                        "gold nugget": 0.25
+                    },
+                    "byproducts": {
+                        "dead bush": 0.05
+                    },
                     "heated": false
                 },
                 "flint": {
@@ -273,8 +388,10 @@
                         "gravel": 1
                     },
                     "products": {
-                        "flint": 1,
-                        "iron nugget": 0.25
+                        "flint": 1
+                    },
+                    "byproducts": {
+                        "iron nuggget": 0.25
                     },
                     "heated": false
                 },
@@ -285,6 +402,9 @@
                     "products": {
                         "packed ice": 1
                     },
+                    "byproducts": {
+                        "none": 1
+                    },
                     "heated": false
                 },
                 "obsidian" : {
@@ -293,6 +413,9 @@
                     },
                     "products": {
                         "obsidian": 1
+                    },
+                    "byproducts": {
+                        "none": 1
                     },
                     "heated": false
                 }
@@ -311,6 +434,9 @@
                     "products": {
                         "iron ingot": 1
                     },
+                    "byproducts": {
+                        "none": 1
+                    },
                     "heated": true
                 },
                 "copper ingot": {
@@ -319,6 +445,9 @@
                     },
                     "products": {
                         "copper ingot": 1
+                    },
+                    "byproducts": {
+                        "none": 1
                     },
                     "heated": true
                 },
@@ -329,6 +458,9 @@
                     "products": {
                         "gold ingot": 1
                     },
+                    "byproducts": {
+                        "none": 1
+                    },
                     "heated": true
                 },
                 "zinc ingot": {
@@ -337,6 +469,9 @@
                     },
                     "products": {
                         "zinc ingot": 1
+                    },
+                    "byproducts": {
+                        "none": 1
                     },
                     "heated": true
                 },
@@ -347,6 +482,9 @@
                     "products": {
                         "stone": 1
                     },
+                    "byproducts": {
+                        "none": 1
+                    },
                     "heated": true
                 },
                 "glass": {
@@ -355,6 +493,9 @@
                     },
                     "products": {
                         "glass": 1
+                    },
+                    "byproducts": {
+                        "none": 1
                     },
                     "heated": true
                 }
@@ -373,6 +514,9 @@
                     "products": {
                         "baked potato": 1
                     },
+                    "byproducts": {
+                        "none": 1
+                    },
                     "heated": true
                 },
                 "dried kelp": {
@@ -381,6 +525,9 @@
                     },
                     "products": {
                         "dried kelp": 1
+                    },
+                    "byproducts": {
+                        "none": 1
                     },
                     "heated": true
                 },
@@ -391,6 +538,9 @@
                     "products": {
                         "steak": 1
                     },
+                    "byproducts": {
+                        "none": 1
+                    },
                     "heated": true
                 },
                 "cooked porkchop": {
@@ -399,6 +549,9 @@
                     },
                     "products": {
                         "cooked porkchop": 1
+                    },
+                    "byproducts": {
+                        "none": 1
                     },
                     "heated": true
                 },
@@ -409,6 +562,9 @@
                     "products": {
                         "cooked chicken": 1
                     },
+                    "byproducts": {
+                        "none": 1
+                    },
                     "heated": true
                 },
                 "cooked mutton": {
@@ -417,6 +573,9 @@
                     },
                     "products": {
                         "cooked mutton": 1
+                    },
+                    "byproducts": {
+                        "none": 1
                     },
                     "heated": true
                 },
@@ -427,6 +586,9 @@
                     "products": {
                         "cooked cod": 1
                     },
+                    "byproducts": {
+                        "none": 1
+                    },
                     "heated": true
                 },
                 "cooked salmon": {
@@ -436,6 +598,9 @@
                     "products": {
                         "cooked salmon": 1
                     },
+                    "byproducts": {
+                        "none": 1
+                    },
                     "heated": true
                 },
                 "cooked rabbit": {
@@ -444,6 +609,9 @@
                     },
                     "products": {
                         "cooked rabbit": 1
+                    },
+                    "byproducts": {
+                        "none": 1
                     },
                     "heated": true
                 }
@@ -539,6 +707,42 @@
                     },
                     "heated": false
                 },
+                "cinder flour": {
+                    "ingredients": {
+                        "netherack": 1
+                    },
+                    "products": {
+                        "cinder flour": 1
+                    },
+                    "byproducts": {
+                        "gold nugget": 0.15
+                    },
+                    "heated": false
+                },
+                "obsidian dust": {
+                    "ingredients": {
+                        "obsidian": 1
+                    },
+                    "products": {
+                        "obsidian dust": 1
+                    },
+                    "byproducts": {
+                        "obsidian chips": 0.25
+                    },
+                    "heated": false
+                },
+                "glowstone dust": {
+                    "ingreidents": {
+                        "glowstone block": 1
+                    },
+                    "products": {
+                        "glowstone dust": 4
+                    },
+                    "byproducts": {
+                        "none": 1
+                    },
+                    "heated": false
+                },
                 "bone meal": {
                     "ingrdients": {
                         "bone": 1
@@ -554,6 +758,18 @@
                     },
                     "products": {
                         "coal dust": 1
+                    },
+                    "heated": false
+                },
+                "amethyst shard": {
+                    "ingredients": {
+                        "amethyst block": 1
+                    },
+                    "products": {
+                        "amethyst shard": 4
+                    },
+                    "byproducts": {
+                        "none": 1
                     },
                     "heated": false
                 }
