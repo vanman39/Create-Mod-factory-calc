@@ -73,6 +73,9 @@
                     "products": {
                         "netherite sheet": 1
                     },
+                    "byproducts": {
+                        "none": 1
+                    },
                     "heated": false
                 },
                 "paper": {
@@ -161,7 +164,7 @@
                     "byproducts": {
                         "none": 1
                     },
-                    "heated": 1
+                    "heated": true
                 },
                 "zinc_ingot": {
                     "ingredients": {
@@ -633,7 +636,7 @@
                     "byproducts": {
                         "none": 1
                     },
-                    "heating": false
+                    "heated": false
                 },
                 "crushed copper ore": {
                     "ingredients": {
@@ -678,6 +681,9 @@
                     "products": {
                         "gravel": 1
                     },
+                    "byproducts": {
+                        "none": 1
+                    },
                     "heated": false
                 },
                 "sand": {
@@ -686,6 +692,9 @@
                     },
                     "products": {
                         "sand": 1
+                    },
+                    "byproducts": {
+                        "none": 1
                     },
                     "heated": false
                 },
@@ -696,6 +705,9 @@
                     "products": {
                         "clay": 1
                     },
+                    "byproducts": {
+                        "none": 1
+                    },
                     "heated": false
                 },
                 "blaze powder": {
@@ -704,6 +716,9 @@
                     },
                     "products": {
                         "blaze powder": 4
+                    },
+                    "byproducts": {
+                        "none": 1
                     },
                     "heated": false
                 },
@@ -732,7 +747,7 @@
                     "heated": false
                 },
                 "glowstone dust": {
-                    "ingreidents": {
+                    "ingredients": {
                         "glowstone block": 1
                     },
                     "products": {
@@ -744,11 +759,14 @@
                     "heated": false
                 },
                 "bone meal": {
-                    "ingrdients": {
+                    "ingredients": {
                         "bone": 1
                     },
                     "products": {
                         "bone meal": 5
+                    },
+                    "byproducts": {
+                        "none": 1
                     },
                     "heated": false
                 },
@@ -758,6 +776,9 @@
                     },
                     "products": {
                         "coal dust": 1
+                    },
+                    "byproducts": {
+                        "none": 1
                     },
                     "heated": false
                 },
