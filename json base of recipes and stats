@@ -598,7 +598,42 @@
                     },
                     "heated": true
                 },
-                
+                "glazed terracotta": {
+                    "ingredients": {
+                        "terracotta": 1
+                    },
+                    "products": {
+                        "glazed terracotta": 1
+                    },
+                    "byproducts": {
+                        "none": 1
+                    },
+                    "heated": true
+                },
+                "cracked stone bricks": {
+                    "ingredients": {
+                        "stone bricks": 1
+                    },
+                    "products": {
+                        "cracked stone bricks": 1
+                    },
+                    "byproducts": {
+                        "none": 1
+                    },
+                    "heated": true
+                },
+                "nether brick item": {
+                    "ingredients": {
+                        "netherrack": 1
+                    },
+                    "products": {
+                        "nether brick": 1
+                    },
+                    "byproducts": {
+                        "none": 1
+                    },
+                    "heated": true
+                }
             }
         },
         "bulk smoking": {
