@@ -973,6 +973,114 @@
                         "none": 1
                     },
                     "heated": false
+                },
+                "recycle saddle": {
+                    "ingredients": {
+                        "saddle": 1
+                    },
+                    "products": {
+                        "leather": 3
+                    },
+                    "byproducts": {
+                        "string": 0.5
+                    },
+                    "heated": false
+                },
+                "coal (crush block)": {
+                    "ingredients": {
+                        "coal block": 1
+                    },
+                    "products": {
+                        "coal": 9
+                    },
+                    "byproducts": {
+                        "none": 1
+                    },
+                    "heated": false
+                },
+                "iron ingot (crush block)": {
+                    "ingredients": {
+                        "iron block": 1
+                    },
+                    "products": {
+                        "iron ingot": 9
+                    },
+                    "byproducts": {
+                        "none": 1
+                    },
+                    "heated": false
+                },
+                "copper ingot (crush block)": {
+                    "ingredients": {
+                        "copper block": 1
+                    },
+                    "products": {
+                        "copper ingot": 9
+                    },
+                    "byproducts": {
+                        "none": 1
+                    },
+                    "heated": false
+                },
+                "gold ingot (crush block)": {
+                    "ingredients": {
+                        "gold block": 1
+                    },
+                    "products": {
+                        "gold ingot": 9
+                    },
+                    "byproducts": {
+                        "none": 1
+                    },
+                    "heated": false
+                },
+                "lapis ingot (crush block)": {
+                    "ingredients": {
+                        "lapis block": 1
+                    },
+                    "products": {
+                        "lapis ingot": 9
+                    },
+                    "byproducts": {
+                        "none": 1
+                    },
+                    "heated": false
+                },
+                "redstone dust (crush block)": {
+                    "ingredients": {
+                        "redstone block": 1
+                    },
+                    "products": {
+                        "redstone dust": 9
+                    },
+                    "byproducts": {
+                        "none": 1
+                    },
+                    "heated": false
+                },
+                "emerald (crush block)": {
+                    "ingredients": {
+                        "emerald block": 1
+                    },
+                    "products": {
+                        "emerald": 9
+                    },
+                    "byproducts": {
+                        "none": 1
+                    },
+                    "heated": false
+                },
+                "diamond (crush block)": {
+                    "ingredients": {
+                        "diamond block": 1
+                    },
+                    "products": {
+                        "diamond": 9
+                    },
+                    "byproducts": {
+                        "none": 1
+                    },
+                    "heated": false
                 }
             }
         }
