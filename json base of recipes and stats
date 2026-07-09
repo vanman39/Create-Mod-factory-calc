@@ -938,7 +938,7 @@
                     },
                     "heated": false
                 },
-                "recyle iron horse armor": {
+                "recycle iron horse armor": {
                     "ingredients": {
                         "iron horse armor": 1
                     },
@@ -950,7 +950,7 @@
                     },
                     "heated": false
                 },
-                "recyle gold horse armor": {
+                "recycle gold horse armor": {
                     "ingredients": {
                         "gold horse armor": 1
                     },
@@ -962,12 +962,12 @@
                     },
                     "heated": false
                 },
-                "recyle diamond horse armor": {
+                "recycle diamond horse armor": {
                     "ingredients": {
                         "diamond horse armor": 1
                     },
                     "products": {
-                        "diamonds": 3
+                        "diamond": 3
                     },
                     "byproducts": {
                         "none": 1
@@ -1034,12 +1034,12 @@
                     },
                     "heated": false
                 },
-                "lapis ingot (crush block)": {
+                "lapis lazuli (crush block)": {
                     "ingredients": {
                         "lapis block": 1
                     },
                     "products": {
-                        "lapis ingot": 9
+                        "lapis lazuli": 9
                     },
                     "byproducts": {
                         "none": 1
