@@ -89,6 +89,78 @@
                         "none": 1
                     },
                     "heated":false
+                },
+                "iron block": {
+                    "ingredients": {
+                        "iron ingot": 9
+                    },
+                    "products": {
+                        "iron block": 1
+                    },
+                    "byproducts": {
+                        "none": 1
+                    },
+                    "heated": false
+                },
+                "copper block": {
+                    "ingredients": {
+                        "copper ingot": 9
+                    },
+                    "products": {
+                        "copper block": 1
+                    },
+                    "byproducts": {
+                        "none": 1
+                    },
+                    "heated": false
+                },
+                "gold block": {
+                    "ingredients": {
+                        "gold ingot": 9
+                    },
+                    "products": {
+                        "gold block": 1
+                    },
+                    "byproducts": {
+                        "none": 1
+                    },
+                    "heated": false
+                },
+                "zinc block": {
+                    "ingredients": {
+                        "zinc ingot": 9
+                    },
+                    "products": {
+                        "zinc block": 1
+                    },
+                    "byproducts": {
+                        "none": 1
+                    },
+                    "heated": false
+                },
+                "brass block": {
+                    "ingredients": {
+                        "brass ingot": 9
+                    },
+                    "products": {
+                        "brass block": 1
+                    },
+                    "byproducts": {
+                        "none": 1
+                    },
+                    "heated": false
+                },
+                "clay block": {
+                    "ingredients": {
+                        "clay ball": 4
+                    },
+                    "products": {
+                        "clay block": 1
+                    },
+                    "byproducts": {
+                        "none": 1
+                    },
+                    "heated": false
                 }
             }
         },
@@ -421,6 +493,30 @@
                         "none": 1
                     },
                     "heated": false
+                },
+                "piston": {
+                    "ingredients": {
+                        "sticky piston": 1
+                    },
+                    "products": {
+                        "piston": 1
+                    },
+                    "byproducts": {
+                        "slimeball": 1
+                    },
+                    "heated": false
+                },
+                "white wool": {
+                    "ingredients": {
+                        "colored wool": 1
+                    },
+                    "products": {
+                        "white wool": 1
+                    },
+                    "byproducts": {
+                        "none": 1
+                    },
+                    "heated": false
                 }
             }
         },
@@ -501,7 +597,8 @@
                         "none": 1
                     },
                     "heated": true
-                }
+                },
+                
             }
         },
         "bulk smoking": {
