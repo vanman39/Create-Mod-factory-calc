@@ -666,6 +666,18 @@
                     },
                     "heated": true
                 },
+                "dried kelp block": {
+                    "ingredients": {
+                        "kelp block": 1
+                    },
+                    "products": {
+                        "dried kelp block": 1
+                    },
+                    "byproducts": {
+                        "none": 1
+                    },
+                    "heated": false
+                },
                 "steak": {
                     "ingredients": {
                         "raw beef": 1
@@ -920,6 +932,42 @@
                     },
                     "products": {
                         "amethyst shard": 4
+                    },
+                    "byproducts": {
+                        "none": 1
+                    },
+                    "heated": false
+                },
+                "recyle iron horse armor": {
+                    "ingredients": {
+                        "iron horse armor": 1
+                    },
+                    "products": {
+                        "iron ingot": 3
+                    },
+                    "byproducts": {
+                        "none": 1
+                    },
+                    "heated": false
+                },
+                "recyle gold horse armor": {
+                    "ingredients": {
+                        "gold horse armor": 1
+                    },
+                    "products": {
+                        "gold ingot": 3
+                    },
+                    "byproducts": {
+                        "none": 1
+                    },
+                    "heated": false
+                },
+                "recyle diamond horse armor": {
+                    "ingredients": {
+                        "diamond horse armor": 1
+                    },
+                    "products": {
+                        "diamonds": 3
                     },
                     "byproducts": {
                         "none": 1
