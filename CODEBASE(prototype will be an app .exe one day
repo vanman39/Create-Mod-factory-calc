@@ -1,80 +1,114 @@
+print("This is the create calc.")
 import os
 import json
 import math
 
-# --- Load Data ---
-base_path = os.path.dirname(os.path.abspath(__file__))
-with open(os.path.join(base_path, "item list.json"), "r") as f:
-    data = json.load(f)
+def is_infinite(item_name, data):
+    if "infinite resources" in data:
+        for category in data["infinite resources"].values():
+            if item_name in category:
+                return True
+    return False
 
-def find_recipes(item_name):
+def find_recipes(item_name, data):
+    """Finds all machines/recipes where the target item is a product."""
     paths = []
-    for m_name, m_data in data["machines"].items():
-        if item_name in m_data["recipes"]:
-            paths.append((m_name, m_data["recipes"][item_name]))
+    for m, m_data in data["machines"].items():
+        for r_key, r_data in m_data["recipes"].items():
+            # Check if the item matches the recipe key name OR is listed in products
+            is_product = "products" in r_data and item_name in r_data["products"]
+            if r_key == item_name or is_product:
+                paths.append((m, r_key, r_data))
+                
+    if is_infinite(item_name, data):
+        paths.append(("base", "infinite", None))
+        
     return paths
 
-def trace_ingredients(ingredients, depth=0):
-    indent = "  " * depth
+def trace_ingredients(ingredients, data, indent="", accumulated_bps=None):
+    if accumulated_bps is None:
+        accumulated_bps = {}
+        
     for item, amount in ingredients.items():
         qty = amount['amount'] if isinstance(amount, dict) else amount
-        paths = find_recipes(item)
+        paths = find_recipes(item, data)
         
         if not paths:
-            print(f"{indent}- Needs {qty}x {item} [INFINITE RESOURCE]")
+            print(f"{indent}- {item}: {qty} [INFINITE RESOURCE]")
         else:
-            print(f"{indent}- Needs {qty}x {item}")
-            # Ask path if multiple, otherwise ask to drill down
+            print(f"{indent}- {item}: {qty}")
             if len(paths) > 1:
-                print(f"{indent}  Paths for {item}:")
-                for i, (m, _) in enumerate(paths):
-                    print(f"{indent}    {i+1}: {m}")
-                idx = int(input(f"{indent}  Select machine (1-{len(paths)}): ")) - 1
-                _, r_data = paths[idx]
+                # Group and display all unique machine options for this item
+                print(f"{indent}  (Multiple sources found: {', '.join([f'{m} ({r})' for m, r, _ in paths])})")
+                choice_m = input(f"{indent}  Enter machine to trace {item} (or 'base'): ")
+                
+                # Find the path matching the chosen machine
+                selected = next((path for path in paths if path[0] == choice_m), None)
+                r_data = selected[2] if selected else None
             else:
-                machine, r_data = paths[0]
-                if input(f"{indent}  Automate {item} via {machine}? (y/n): ").lower() != 'y':
+                machine, r_key, r_data = paths[0]
+                if machine == "base":
+                    continue
+                if input(f"{indent}  Automate {item} via {machine}? (y/n): ") != 'y':
                     continue
             
-            trace_ingredients(r_data["ingredients"], depth + 1)
+            if r_data:
+                if "byproducts" in r_data:
+                    for bp, bp_rate in r_data["byproducts"].items():
+                        if bp != "none":
+                            accumulated_bps[bp] = accumulated_bps.get(bp, 0) + (bp_rate * qty)
+                            
+                trace_ingredients(r_data["ingredients"], data, indent + "  ", accumulated_bps)
+                
+    return accumulated_bps
 
-# --- MAIN LOOP ---
+# --- Main Loop ---
 while True:
-    print("\n" + "="*30)
-    print("   SELECT MACHINE")
-    print("="*30)
+    base_path = os.path.dirname(os.path.abspath(__file__))
+    with open(os.path.join(base_path, "item list.json"), "r") as f:
+        data = json.load(f)
+
+    print("Available machines: ")
+    for machine_name in data["machines"].keys():
+        print(f"- {machine_name}")
     
-    machines = list(data["machines"].keys())
-    for i, m in enumerate(machines):
-        print(f"{i+1}. {m}")
+    machine_choice = input("Enter the machine name from the list above: ")
+    
+    print("Available recipes: ")
+    for recipe_name in data["machines"][machine_choice]["recipes"].keys():
+        print(f"- {recipe_name}")
         
-    m_choice = int(input("\nChoice: ")) - 1
-    m_name = machines[m_choice]
+    recipe_choice = input("Enter the recipe name from the list above: ")
     
-    print("\n" + "-"*30)
-    print(f"   RECIPES: {m_name.upper()}")
-    print("-"*30)
+    target_rpm = int(input("Enter the target RPM: "))
+    items_wanted_hr = int(input("Enter the number of items you want to produce per hour: "))
+    items_wanted = items_wanted_hr / 3600
     
-    recipes = list(data["machines"][m_name]["recipes"].keys())
-    for i, r in enumerate(recipes):
-        print(f"{i+1}. {r}")
+    # Calc Logic
+    recipe_data = data["machines"][machine_choice]["recipes"][recipe_choice]
+    items_produced = target_rpm * data["machines"][machine_choice]["cycle_amount_per_second"]
+    machines_needed = math.ceil(items_wanted / items_produced)
+    
+    print(f"You will need {machines_needed} {machine_choice} machines to produce {items_wanted_hr} items per hour at {target_rpm} RPM.")
+    print(f"- Heated: {recipe_data['heated']}")
+    
+    print("Ingredients: ")
+    for ing, amt in recipe_data["ingredients"].items():
+        print(f"- {ing}: {amt}")
         
-    r_choice = int(input("\nChoice: ")) - 1
-    r_name = recipes[r_choice]
-    
-    recipe = data["machines"][m_name]["recipes"][r_name]
-    
-    # Calc
-    rpm = int(input(f"\nRPM for {r_name}: "))
-    goal = int(input("Items/Hr goal: "))
-    
-    per_sec = rpm * data["machines"][m_name]["cycle_amount_per_second"]
-    needed = math.ceil((goal / 3600) / per_sec)
-    
-    print(f"\nResult: Need {needed}x {m_name}")
-    
-    if input("\nTrace to Infinite Resources? (y/n): ").lower() == 'y':
-        trace_ingredients(recipe["ingredients"])
+    print("Byproducts: ")
+    for b_item, b_amt in recipe_data["byproducts"].items():
+        if b_item != "none":
+            print(f"- {b_item}: {b_amt}")
+        else:
+            print("- None")
+            
+    if input("Trace back to infinite resources? (y/n): ") == 'y':
+        all_trace_byproducts = trace_ingredients(recipe_data["ingredients"], data)
         
-    if input("\nCalculate another? (y/n): ").lower() != 'y':
-        break
+        if all_trace_byproducts:
+            print("\nAdditional Byproducts from Trace Chain:")
+            for bp in all_trace_byproducts.keys():
+                print(f"- {bp}")
+
+    print("\n" + "-"*40 + "\n")
