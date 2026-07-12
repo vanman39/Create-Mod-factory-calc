@@ -183,6 +183,17 @@
                     },
                     "heated": false
                 },
+                "lava bucket": {
+                    "ingredients": {
+                        "cobblestone": 1
+                    },
+                    "products": {
+                        "lava bucket": {
+                            "amount": 1,
+                            "lava": true
+                        }
+                    }
+                },
                 "dough": {
                     "ingredients": {
                         "wheat flour": 3,
@@ -199,26 +210,26 @@
                     },
                     "heated": false
                 },
-                "colored_concrete powder": {
+                "colored concrete powder": {
                     "ingredients": {
                         "gravel": 4,
                         "sand": 4,
                         "dye": 1
                     },
                     "products": {
-                        "concrete powder": 8
+                        "colored concrete powder": 8
                     },
                     "byproducts": {
                         "none": 1
                     },
                     "heated": false
                 },
-                "copper_ingot": {
+                "copper ingot": {
                     "ingredients": {
                         "raw copper": 1
                     },
                     "products": {
-                        "copper_ingot": 1
+                        "copper ingot": 1
                     },
                     "byproducts": {
                         "none": 1
@@ -238,12 +249,12 @@
                     },
                     "heated": true
                 },
-                "zinc_ingot": {
+                "zinc ingot": {
                     "ingredients": {
                         "raw zinc": 1
                     },
                     "products": {
-                        "zinc_ingot": 1
+                        "zinc ingot": 1
                     },
                     "byproducts": {
                         "none": 1
@@ -262,7 +273,7 @@
                     },
                     "heated": false
                 },
-                "rose_quartz": {
+                "rose quartz": {
                     "ingredients": {
                         "quartz": 1,
                         "redstone": 1
@@ -281,7 +292,7 @@
                         "sand paper": 1
                     },
                     "products": {
-                        "polished_rose_quartz": 1
+                        "polished rose quartz": 1
                     },
                     "byproducts": {
                         "none": 1
@@ -321,7 +332,7 @@
                             "amount": 0.25,
                             "water": true
                         },
-                        "bucket of milk": {
+                        "milk bucket": {
                             "amount": 0.25,
                             "milk": true
                         }
@@ -1139,7 +1150,10 @@
             "soul sand",
             "gold nugget",
             "glowstone dust"
+        ],
+        "fluids": [
+            "water bucket",
+            "milk bucket"
         ]
-
     }
 }
