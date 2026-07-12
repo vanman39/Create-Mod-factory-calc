@@ -1200,7 +1200,7 @@
                     "ingredients": {
                         "builder's tea": {
                             "amount": 0.25,
-                            "tea"
+                            "tea": true
                         },
                         "glass bottle": 1
                     },
@@ -1238,6 +1238,41 @@
                     },
                     "products": {
                         "bottle of water": 1
+                    },
+                    "byproducts": {
+                        "none": 1
+                    },
+                    "heated": false
+                },
+                "honey bucket": {
+                    "ingredients": {
+                        "honey": {
+                            "amount": 1,
+                            "honey": true
+                        },
+                        "bucket": 1
+                    },
+                    "products": {
+                        "honey bucket": 1
+                    },
+                    "byproducts": {
+                        "none": 1
+                    },
+                    "heated": false
+                },
+                "milk bucket": {
+                    "ingredients": {
+                        "milk bucket": {
+                            "amount": 1,
+                            "milk": true
+                        },
+                        "bucket": 1
+                    },
+                    "products": {
+                        "milk bucket": {
+                            "amount":1,
+                            "milk":true
+                        }
                     },
                     "byproducts": {
                         "none": 1
