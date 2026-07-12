@@ -2,82 +2,77 @@ import os
 import json
 import math
 
-# --- Setup: Find and load the JSON ---
+# --- Setup ---
 base_path = os.path.dirname(os.path.abspath(__file__))
-json_path = os.path.join(base_path, "item list.json")
-
-with open(json_path, "r") as f:
+with open(os.path.join(base_path, "item list.json"), "r") as f:
     data = json.load(f)
 
-# --- Functions for Tracing ---
-def find_all_recipes_for_item(item_name, data):
+def find_recipes(item_name):
     paths = []
-    for machine_name, m_data in data["machines"].items():
+    for m_name, m_data in data["machines"].items():
         if item_name in m_data["recipes"]:
-            paths.append((machine_name, m_data["recipes"][item_name]))
+            paths.append((m_name, m_data["recipes"][item_name]))
     return paths
 
-def trace_ingredients(ingredients_dict, data, depth=0):
+def trace_ingredients(ingredients, depth=0):
     indent = "  " * depth
-    for item, amount in ingredients_dict.items():
-        # Skip fluids if they aren't part of your machine recipes
-        if isinstance(item, dict) or item in ["water", "milk"]: continue
+    for item, amount in ingredients.items():
+        qty = amount['amount'] if isinstance(amount, dict) else amount
+        paths = find_recipes(item)
         
-        paths = find_all_recipes_for_item(item, data)
         if not paths:
-            print(f"{indent}- Needs {amount}x {item} (No automated recipe found)")
-            continue
-            
-        print(f"{indent}- Needs {amount}x {item}")
-        
-        if len(paths) > 1:
-            print(f"{indent}  Multiple ways to make {item}:")
-            for i, (m_name, _) in enumerate(paths):
-                print(f"{indent}    {i+1}: {m_name}")
-            try:
-                choice = int(input(f"{indent}  Choose a path (1-{len(paths)}): ")) - 1
-                machine, r_data = paths[choice]
-            except: continue
+            print(f"{indent}- Needs {qty}x {item} [BASE / FARMED / MINED]")
         else:
-            machine, r_data = paths[0]
-            choice = input(f"{indent}  Automate {item} via {machine}? (y/n): ")
-            if choice.lower() != 'y': continue
+            print(f"{indent}- Needs {qty}x {item}")
+            # Ask for path selection BEFORE drilling deeper
+            if len(paths) > 1:
+                print(f"{indent}  Available paths for {item}:")
+                for i, (m, _) in enumerate(paths):
+                    print(f"{indent}    {i+1}: {m}")
+                idx = int(input(f"{indent}  Select machine (1-{len(paths)}): ")) - 1
+                _, r_data = paths[idx]
+            else:
+                machine, r_data = paths[0]
+                if input(f"{indent}  Automate {item} via {machine}? (y/n): ").lower() != 'y':
+                    print(f"{indent}  {item} marked as base.")
+                    continue
             
-        trace_ingredients(r_data["ingredients"], data, depth + 1)
+            # Recurse
+            trace_ingredients(r_data["ingredients"], depth + 1)
 
-# --- MAIN LOOP ---
+# --- Main Loop ---
 while True:
-    print("\nAvailable machines: " + ", ".join(data["machines"].keys()))
-    machine_choice = input("Enter machine name: ")
-    if machine_choice not in data["machines"]: continue
+    print("\n" + "="*50)
+    print("MACHINES & RECIPES")
+    print("="*50)
     
-    recipes = data["machines"][machine_choice]["recipes"]
-    print("\nRecipes: " + ", ".join(recipes.keys()))
-    recipe_choice = input("Enter recipe name: ")
-    if recipe_choice not in recipes: continue
-
-    recipe = recipes[recipe_choice]
-    target_rpm = int(input("Target RPM: "))
-    items_wanted = int(input("Items needed per hour: ")) / 3600
+    machine_list = list(data["machines"].keys())
+    for i, m_name in enumerate(machine_list):
+        print(f"\n[{i+1}] MACHINE: {m_name}")
+        print("-" * 50)
+        for r_name in data["machines"][m_name]["recipes"].keys():
+            print(f"    Recipe: {r_name}")
     
-    # Calculation
-    items_produced = target_rpm * data["machines"][machine_choice]["cycle_amount_per_second"]
-    machines_needed = math.ceil(items_wanted / items_produced)
+    m_idx = int(input("\nSelect Machine Index: ")) - 1
+    m_name = machine_list[m_idx]
     
-    print(f"\nResult: {machines_needed}x {machine_choice} required.")
-    print(f"Heated: {recipe['heated']}")
+    recipe_list = list(data["machines"][m_name]["recipes"].keys())
+    r_idx = int(input(f"Select Recipe Index (1-{len(recipe_list)}): ")) - 1
+    r_name = recipe_list[r_idx]
     
-    # Byproducts
-    print("\nByproducts (Expected per hour):")
-    for b_item, rate in recipe["byproducts"].items():
-        if b_item != "none":
-            yield_hr = rate * (items_produced * machines_needed * 3600)
-            print(f"- {b_item}: {yield_hr:.2f}")
-        else:
-            print("- None")
-
-    # Trace Back
-    if input("\nTrace back all ingredients? (y/n): ").lower() == 'y':
-        trace_ingredients(recipe["ingredients"], data)
+    recipe = data["machines"][m_name]["recipes"][r_name]
+    
+    print(f"\n--- CALCULATING: {r_name} ---")
+    rpm = int(input("Target RPM: "))
+    hourly_goal = int(input("Items/Hr goal: "))
+    
+    items_per_sec = rpm * data["machines"][m_name]["cycle_amount_per_second"]
+    machines_needed = math.ceil((hourly_goal / 3600) / items_per_sec)
+    
+    print(f"\nREQUIRED: {machines_needed}x {m_name}")
+    
+    if input("\nTrace full automation tree to base materials? (y/n): ").lower() == 'y':
+        print("\n--- PRODUCTION TREE ---")
+        trace_ingredients(recipe["ingredients"])
         
     if input("\nCalculate another? (y/n): ").lower() != 'y': break
