@@ -279,7 +279,7 @@
                         "redstone": 1
                     },
                     "products": {
-                        "rose_quartz": 1
+                        "rose quartz": 1
                     },
                     "byproducts": {
                         "none": 1
@@ -288,7 +288,7 @@
                 },
                 "polished rose quartz": {
                     "ingredients": {
-                        "rose_quartz": 1,
+                        "rose quartz": 1,
                         "sand paper": 1
                     },
                     "products": {
@@ -1047,7 +1047,7 @@
                 },
                 "lapis lazuli (crush block)": {
                     "ingredients": {
-                        "lapis block": 1
+                        "lapis lazuli block": 1
                     },
                     "products": {
                         "lapis lazuli": 9
