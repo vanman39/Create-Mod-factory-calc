@@ -1087,7 +1087,12 @@
     },
     "infinite resources": {
         "renewable": [
-            "cobblestone"
+            "cobblestone",
+            "stone",
+            "obsidian",
+            "andesite",
+            "granite",
+            "diorite"
         ],
         "mined with drill": [
             "raw iron",
@@ -1121,7 +1126,19 @@
             "raw rabbit",
             "raw porkchop",
             "raw salmon",
-            "raw cod"
+            "raw cod",
+            "egg",
+            "milk bucket",
+            "bone",
+            "gunpowder",
+            "string",
+            "spider eye",
+            "ender pearl",
+            "blaze rod",
+            "netherrack",
+            "soul sand",
+            "gold nugget",
+            "glowstone dust"
         ]
 
     }
