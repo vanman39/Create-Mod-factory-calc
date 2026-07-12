@@ -165,7 +165,7 @@
             }
         },
         "mechanical mixer": {
-            "rpm_base": 1,
+            "rpm_base": 32,
             "su_base": 4,
             "max_rpm": 256,
             "cycle_amount_per_second": 0.01,
@@ -1084,5 +1084,45 @@
                 }
             }
         }
+    },
+    "infinite resources": {
+        "renewable": [
+            "cobblestone"
+        ],
+        "mined with drill": [
+            "raw iron",
+            "coal",
+            "raw copper",
+            "raw zinc",
+            "raw gold",
+            "diamond",
+            "emerald",
+            "redstone",
+            "lapis lazuli",
+            "quartz",
+            "ancient debris"
+        ],
+        "farmed": [
+            "logs",
+            "wheat",
+            "sugar cane",
+            "potato",
+            "carrot",
+            "kelp",
+            "pumpkin",
+            "melon",
+            "cocoa beans",
+            "dye",
+            "slimeball",
+            "leather",
+            "raw beef",
+            "raw chicken",
+            "raw mutton",
+            "raw rabbit",
+            "raw porkchop",
+            "raw salmon",
+            "raw cod"
+        ]
+
     }
 }
