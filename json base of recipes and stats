@@ -1094,66 +1094,217 @@
                     "heated": false
                 }
             }
+        },
+        "mechanical spout": {
+            "rpm_base": 1,
+            "su_base": 4,
+            "max_rpm": 256,
+            "cycle_amount_per_second": 0.1,
+            "recipes": {
+                "honey bottle": {
+                    "ingredients": {
+                        "glass bottle": 1,
+                        "honey bucket": {
+                            "amount": 0.25,
+                            "honey": true
+                        }
+                    },
+                    "products": {
+                        "honey bottle": 1
+                    },
+                    "byproducts": {
+                        "none": 1
+                    },
+                    "heated": false                    
+                },
+                "blaze cake": {
+                    "ingredients": {
+                        "blaze cake base": 1,
+                        "lava bucket": {
+                            "amount": 0.25,
+                            "lava": true
+                        }
+                    },
+                    "products": {
+                        "blaze cake": 1
+                    },
+                    "byproducts": {
+                        "none": 1
+                    },
+                    "heated": false
+                },
+                "gunpowder": {
+                    "ingredients": {
+                        "potion of harming": {
+                            "amount": 0.025
+                        },
+                        "cinder flour": 1
+                    },
+                    "products": {
+                        "gunpowder": 1
+                    },
+                    "byproducts": {
+                        "none": 1
+                    },
+                    "heated": false
+                },
+                "glowstone dust": {
+                    "ingredients": {
+                        "potion of night vision": {
+                            "amount": 0.025,
+                            "night vision": true
+                        },
+                        "cinder flour": 1
+                    },
+                    "products": {
+                        "glowstone dust": 1
+                    },
+                    "byproducts": {
+                        "none": 1
+                    },
+                    "heated": false
+                },
+                "redstone dust": {
+                    "ingredients": {
+                        "potion of strength": {
+                            "amount":0.025,
+                            "strength": true
+                        },
+                        "cinder flour":1
+                    },
+                    "products": {
+                        "redstone dust": 1
+                    },
+                    "byproducts": {
+                        "none":1
+                    },
+                    "heated":false
+                },
+                "grass block": {
+                    "ingredients": {
+                        "water bucket":{
+                            "amount":0.5,
+                            "water":true
+                        },
+                        "dirt": 1
+                    },
+                    "products": {
+                        "grass block": 1
+                    },
+                    "byproducts": {
+                        "none":1
+                    },
+                    "heated":false
+                },
+                "bottle of builder's tea": {
+                    "ingredients": {
+                        "builder's tea": {
+                            "amount": 0.25,
+                            "tea"
+                        },
+                        "glass bottle": 1
+                    },
+                    "products": {
+                        "bottle of builder's tea": 1
+                    },
+                    "byproducts": {
+                        "none":1
+                    },
+                    "heated":false
+                },
+                "bottle of potion": {
+                    "ingredients": {
+                        "glass bottle": 1,
+                        "potion": {
+                            "amount": 0.25,
+                            "potion": true
+                        }
+                    },
+                    "products": {
+                        "bottle of potion": 1
+                    },
+                    "byproducts": {
+                        "none": 1
+                    },
+                    "heated": false
+                },
+                "water bottle": {
+                    "ingredients": {
+                        "water bucket": {
+                            "amount": 0.25,
+                            "water": true
+                        },
+                        "glass bottle": 1
+                    },
+                    "products": {
+                        "bottle of water": 1
+                    },
+                    "byproducts": {
+                        "none": 1
+                    },
+                    "heated": false
+                }
+            }
+        },
+        "infinite resources": {
+            "renewable": [
+                "cobblestone",
+                "stone",
+                "obsidian",
+                "andesite",
+                "granite",
+                "diorite"
+            ],
+            "mined with drill": [
+                "raw iron",
+                "coal",
+                "raw copper",
+                "raw zinc",
+                "raw gold",
+                "diamond",
+                "emerald",
+                "redstone",
+                "lapis lazuli",
+                "quartz",
+                "ancient debris"
+            ],
+            "farmed": [
+                "logs",
+                "wheat",
+                "sugar cane",
+                "potato",
+                "carrot",
+                "kelp",
+                "pumpkin",
+                "melon",
+                "cocoa beans",
+                "dye",
+                "slimeball",
+                "leather",
+                "raw beef",
+                "raw chicken",
+                "raw mutton",
+                "raw rabbit",
+                "raw porkchop",
+                "raw salmon",
+                "raw cod",
+                "egg",
+                "milk bucket",
+                "bone",
+                "gunpowder",
+                "string",
+                "spider eye",
+                "ender pearl",
+                "blaze rod",
+                "netherrack",
+                "soul sand",
+                "gold nugget",
+                "glowstone dust"
+            ],
+            "fluids": [
+                "water bucket",
+                "milk bucket"
+            ]
         }
-    },
-    "infinite resources": {
-        "renewable": [
-            "cobblestone",
-            "stone",
-            "obsidian",
-            "andesite",
-            "granite",
-            "diorite"
-        ],
-        "mined with drill": [
-            "raw iron",
-            "coal",
-            "raw copper",
-            "raw zinc",
-            "raw gold",
-            "diamond",
-            "emerald",
-            "redstone",
-            "lapis lazuli",
-            "quartz",
-            "ancient debris"
-        ],
-        "farmed": [
-            "logs",
-            "wheat",
-            "sugar cane",
-            "potato",
-            "carrot",
-            "kelp",
-            "pumpkin",
-            "melon",
-            "cocoa beans",
-            "dye",
-            "slimeball",
-            "leather",
-            "raw beef",
-            "raw chicken",
-            "raw mutton",
-            "raw rabbit",
-            "raw porkchop",
-            "raw salmon",
-            "raw cod",
-            "egg",
-            "milk bucket",
-            "bone",
-            "gunpowder",
-            "string",
-            "spider eye",
-            "ender pearl",
-            "blaze rod",
-            "netherrack",
-            "soul sand",
-            "gold nugget",
-            "glowstone dust"
-        ],
-        "fluids": [
-            "water bucket",
-            "milk bucket"
-        ]
     }
 }
