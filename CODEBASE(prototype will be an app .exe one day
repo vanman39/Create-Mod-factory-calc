@@ -2,118 +2,82 @@ import os
 import json
 import math
 
-print("This is the create calc.")
-
-# Read the file once outside the main simulation loop
+# --- Setup: Find and load the JSON ---
 base_path = os.path.dirname(os.path.abspath(__file__))
-with open(os.path.join(base_path, "item list.json"), "r") as f:
+json_path = os.path.join(base_path, "item list.json")
+
+with open(json_path, "r") as f:
     data = json.load(f)
 
+# --- Functions for Tracing ---
+def find_all_recipes_for_item(item_name, data):
+    paths = []
+    for machine_name, m_data in data["machines"].items():
+        if item_name in m_data["recipes"]:
+            paths.append((machine_name, m_data["recipes"][item_name]))
+    return paths
+
+def trace_ingredients(ingredients_dict, data, depth=0):
+    indent = "  " * depth
+    for item, amount in ingredients_dict.items():
+        # Skip fluids if they aren't part of your machine recipes
+        if isinstance(item, dict) or item in ["water", "milk"]: continue
+        
+        paths = find_all_recipes_for_item(item, data)
+        if not paths:
+            print(f"{indent}- Needs {amount}x {item} (No automated recipe found)")
+            continue
+            
+        print(f"{indent}- Needs {amount}x {item}")
+        
+        if len(paths) > 1:
+            print(f"{indent}  Multiple ways to make {item}:")
+            for i, (m_name, _) in enumerate(paths):
+                print(f"{indent}    {i+1}: {m_name}")
+            try:
+                choice = int(input(f"{indent}  Choose a path (1-{len(paths)}): ")) - 1
+                machine, r_data = paths[choice]
+            except: continue
+        else:
+            machine, r_data = paths[0]
+            choice = input(f"{indent}  Automate {item} via {machine}? (y/n): ")
+            if choice.lower() != 'y': continue
+            
+        trace_ingredients(r_data["ingredients"], data, depth + 1)
+
+# --- MAIN LOOP ---
 while True:
-    print("\n========================================")
-    print("Available machines: ")
-    for machine_name in data["machines"].keys():
-        print(f"- {machine_name}")
-        
-    machine_choice = input("\nEnter the machine name from the list above: ").lower().strip()
-    if machine_choice not in data["machines"]:
-        print("Invalid machine name! Please try again.")
-        continue
-        
-    machine_data = data["machines"][machine_choice]
+    print("\nAvailable machines: " + ", ".join(data["machines"].keys()))
+    machine_choice = input("Enter machine name: ")
+    if machine_choice not in data["machines"]: continue
     
-    print(f"\nAvailable recipes for {machine_choice}:")
-    for recipe_name in machine_data["recipes"].keys():
-        print(f"- {recipe_name}")
-        
-    recipe_choice = input("\nEnter the recipe name from the list above: ").strip()
-    if recipe_choice not in machine_data["recipes"]:
-        print("Invalid recipe name! Please try again.")
-        continue
-        
-    # Read boundaries directly from your JSON parameters
-    min_rpm_required = machine_data["rpm_base"]
-    max_rpm_allowed = machine_data["max_rpm"]
+    recipes = data["machines"][machine_choice]["recipes"]
+    print("\nRecipes: " + ", ".join(recipes.keys()))
+    recipe_choice = input("Enter recipe name: ")
+    if recipe_choice not in recipes: continue
 
-    # Physical boundary speed safety check loop
-    try:
-        target_rpm = int(input(f"Enter your operational RPM ({min_rpm_required}-{max_rpm_allowed}): "))
-    except ValueError:
-        print("\n!! ERROR: Please enter a valid whole number for RPM.")
-        print("Retrying setup configuration...\n")
-        continue
+    recipe = recipes[recipe_choice]
+    target_rpm = int(input("Target RPM: "))
+    items_wanted = int(input("Items needed per hour: ")) / 3600
     
-    if target_rpm < min_rpm_required:
-        print(f"\n!! ERROR: Speed too low! {machine_choice} requires a minimum of {min_rpm_required} RPM to operate.")
-        print("Retrying setup configuration...\n")
-        continue
-        
-    if target_rpm > max_rpm_allowed:
-        print(f"\n!! ERROR: Speed too high! {machine_choice} will break/stall if run above {max_rpm_allowed} RPM.")
-        print("Retrying setup configuration...\n")
-        continue
+    # Calculation
+    items_produced = target_rpm * data["machines"][machine_choice]["cycle_amount_per_second"]
+    machines_needed = math.ceil(items_wanted / items_produced)
+    
+    print(f"\nResult: {machines_needed}x {machine_choice} required.")
+    print(f"Heated: {recipe['heated']}")
+    
+    # Byproducts
+    print("\nByproducts (Expected per hour):")
+    for b_item, rate in recipe["byproducts"].items():
+        if b_item != "none":
+            yield_hr = rate * (items_produced * machines_needed * 3600)
+            print(f"- {b_item}: {yield_hr:.2f}")
+        else:
+            print("- None")
 
-    try:
-        items_wanted_per_hour = float(input("Enter the number of items you want to produce per hour: "))
-    except ValueError:
-        print("\n!! ERROR: Please enter a valid number for hourly item volume.")
-        print("Retrying setup configuration...\n")
-        continue
-    
-    # Calculate conversion baselines
-    items_wanted_per_sec = items_wanted_per_hour / 3600
-    recipe = machine_data["recipes"][recipe_choice]
-    
-    # Core production tracking
-    items_produced_per_machine_sec = target_rpm * machine_data["cycle_amount_per_second"]
-    machines_needed = math.ceil(items_wanted_per_sec / items_produced_per_machine_sec)
-    
-    # Kinetic performance calculations
-    su_per_machine = machine_data["su_base"] * (target_rpm / machine_data["rpm_base"])
-    total_su_needed = su_per_machine * machines_needed
-    
-    print("\n================ OUTPUT RESULTS ================")
-    print(f"To produce {items_wanted_per_hour} items/hr at {target_rpm} RPM:")
-    print(f"-> Machines Needed: {machines_needed}x {machine_choice}")
-    print(f"-> Kinetic Requirements: {total_su_needed:.1f} SU total ({su_per_machine:.1f} SU per machine)")
-    print(f"-> Minimum Machine RPM: {min_rpm_required} RPM")
-    print(f"-> Maximum Machine RPM: {max_rpm_allowed} RPM")
-    print(f"-> Heated Required: {recipe['heated']}")
+    # Trace Back
+    if input("\nTrace back all ingredients? (y/n): ").lower() == 'y':
+        trace_ingredients(recipe["ingredients"], data)
         
-    print("------------------------------------------------")
-    
-    # 1. Ingredients Output Breakdown
-    print("Ingredients Needed (Per Hour Total):")
-    for ing, details in recipe["ingredients"].items():
-        base_qty = details["amount"] if isinstance(details, dict) else details
-        total_ing_needed = base_qty * (items_wanted_per_sec / items_produced_per_machine_sec) * 3600
-        print(f"  - {ing}: {math.ceil(total_ing_needed)} units total")
-        
-    print("------------------------------------------------")
-    
-    # 2. Main Products Output Breakdown
-    print("Main Products Yielded (Per Hour Total):")
-    for prod, details in recipe["products"].items():
-        base_qty = details["amount"] if isinstance(details, dict) else details
-        total_prod_yielded = base_qty * (items_produced_per_machine_sec * machines_needed) * 3600
-        print(f"  - {prod}: {total_prod_yielded:.1f} items/hr maximum potential")
-        
-    print("------------------------------------------------")
-    
-    # 3. Probabilistic Byproducts Output Breakdown
-    print("Byproducts Yielded (Expected Per Hour):")
-    if "byproducts" in recipe:
-        for byprod, rate in recipe["byproducts"].items():
-            if byprod == "none" or rate == "none":
-                print("  - None")
-            else:
-                expected_byproduct_hr = rate * (items_produced_per_machine_sec * machines_needed) * 3600
-                print(f"  - {byprod}: ~{expected_byproduct_hr:.1f} items/hr (at a {rate*100:.0f}% drop rate)")
-    else:
-        print("  - None")
-    print("================================================\n")
-    
-    cont = input("Calculate another factory setup? (y/n): ").lower().strip()
-    if cont != 'y':
-        print("Exiting calculator. Go fire up your steam engines and enjoy your automation!")
-        break
+    if input("\nCalculate another? (y/n): ").lower() != 'y': break
