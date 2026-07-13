@@ -1405,6 +1405,61 @@
                     "products": {
                         "mechanical crafter": 3
                     }
+                },
+                "extendo grip": {
+                    "grid_size":"3x3",
+                    "ingredients": {
+                        "brass ingot": 1,
+                        "precision mechanism": 1,
+                        "stick": 1,
+                        "brass hand": 1
+                    },
+                    "products": {
+                        "extendo grip": 1
+                    }
+                },
+                "potato cannon": {
+                    "grid_size": "3x3",
+                    "ingredients": {
+                        "andesite alloy": 1,
+                        "precision mechanism": 1,
+                        "fluid pipe": 1,
+                        "copper ingot": 1
+                    },
+                    "products": {
+                        "potato cannon": 1
+                    }
+                },
+                "speedometer": {
+                    "grid_size": "2x2",
+                    "ingredients": {
+                        "andesite alloy": 1,
+                        "compass": 1
+                    },
+                    "products": {
+                        "speedometer": 1
+                    }
+                },
+                "stressometer": {
+                    "grid_size": "2x2",
+                    "ingredients": {
+                        "andesite casing": 1,
+                        "compass": 1
+                    },
+                    "products": {
+                        "stressometer": 1
+                    }
+                },
+                "smart chute": {
+                    "grid_size": "2x2",
+                    "ingredients": {
+                        "chute": 1,
+                        "electron tube": 1,
+                        "brass sheet": 1
+                    },
+                    "products": {
+                        "smart chute": 1
+                    }
                 }
             }
         }
