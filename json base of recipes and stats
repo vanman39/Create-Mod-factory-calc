@@ -1467,8 +1467,123 @@
                         "precision mechanism": 1,
                         "obsidian": 3,
                         "brass ingot": 2,
-                        "ender pearl": 1,
+                        "ender pe arl": 1,
                         "glass": 2
+                    },
+                    "products": {
+                        "wand of symmetry": 1
+                    }
+                },
+                "andesite alloy": {
+                    "grid_size": "2x2",
+                    "ingredients": {
+                        "andesite": 2,
+                        "iron nugget": 2
+                    },
+                    "products": {
+                        "andesite alloy": 2
+                    }
+                },
+                "shaft": {
+                    "grid_size": "2x2",
+                    "ingredients": {
+                        "andesite alloy": 2
+                    },
+                    "products": {
+                        "shaft": 8
+                    }
+                },
+                "cogwheel": {
+                    "grid_size": "2x2",
+                    "ingredients": {
+                        "shaft": 1,
+                        "wood planks": 1
+                    },
+                    "products": {
+                        "cogwheel": 1
+                    }
+                },
+                "large cogwheel": {
+                    "grid_size": "3x3",
+                    "ingredients": {
+                        "shaft": 1,
+                        "wood planks": 4
+                    },
+                    "products": {
+                        "large cogwheel": 1
+                    }
+                },
+                "water wheel": {
+                    "grid_size": "3x3",
+                    "ingredients": {
+                        "large cogwheel": 1,
+                        "wood planks": 8
+                    },
+                    "products": {
+                        "water wheel": 1
+                    }
+                },
+                "large water wheel": {
+                    "grid_size": "3x3",
+                    "ingredients": {
+                        "water wheel": 1,
+                        "wood planks": 8
+                    },
+                    "products": {
+                        "large water wheel": 1
+                    }
+                },
+                "windmill bearing": {
+                    "grid_size": "3x3",
+                    "ingredients": {
+                        "andesite casing": 1,
+                        "turntable": 1,
+                        "stone slab": 1
+                    },
+                    "products": {
+                        "windmill bearing": 1
+                    }
+                },
+                "white sail": {
+                    "grid_size": "3x3",
+                    "ingredients": {
+                        "wool": 1,
+                        "stick": 2,
+                        "andesite alloy": 1
+                    },
+                    "products": {
+                        "white sail": 8
+                    }
+                },
+                "gearbox": {
+                    "grid_size": "3x3",
+                    "ingredients": {
+                        "andesite casing": 1,
+                        "cogwheel": 4
+                    },
+                    "products": {
+                        "gearbox": 1
+                    }
+                },
+                "clutch": {
+                    "grid_size": "3x3",
+                    "ingredients": {
+                        "andesite casing": 1,
+                        "shaft": 1,
+                        "redstone torch": 1
+                    },
+                    "products": {
+                        "gearshift": 1
+                    }
+                },
+                "encased chain drive": {
+                    "grid_size": "3x3",
+                    "ingredients": {
+                        "andesite casing": 1,
+                        "iron nugget": 3
+                    },
+                    "products": {
+                        "encased chain drive": 2
                     }
                 }
             }
