@@ -1309,6 +1309,104 @@
                     "heated": false
                 }
             }
+        },
+        "mechanical crafter": {
+            "rpm_base": 16,
+            "su_base": 16,
+            "max_rpm": 256,
+            "grid_times": {
+                "2x2": 5,
+                "3x3": 10,
+                "4x4": 15,
+                "5x5": 20
+            },
+            "recipes": {
+                "mechanical arm": {
+                    "grid_size": "3x3",
+                    "ingredients": {
+                        "brass casing": 1,
+                        "andesite alloy": 2,
+                        "precision mechanism": 1
+                    },
+                    "products": {
+                        "mechanical arm": 1
+                        }
+                    },
+                "crushing wheel": {
+                    "grid_size": "5x5",
+                    "ingredients": {
+                        "andesite alloy": 16,
+                        "wood planks": 4,
+                        "cobblestone": 1
+                    },
+                    "products": {
+                        "crushing wheel": 2
+                    }
+                },
+                "rotation speed controller": {
+                    "grid_size": "3x3",
+                    "ingredients": {
+                        "brass casing": 1,
+                        "precision mechanism": 1
+                    },
+                    "products": {
+                        "rotation speed controller": 1
+                    }
+                },
+                "sequenced gearshift": {
+                    "grid_size": "3x3",
+                    "ingredients": {
+                        "brass casing": 1,
+                        "precision mechanism": 1,
+                        "cogwheel": 1
+                    },
+                    "products": {
+                        "sequenced gearshift": 1
+                    }
+                },
+                "electron tube": {
+                    "grid_size": "2x2",
+                    "ingredients": {
+                        "iron nugget": 1,
+                        "polished rose quartz": 1
+                    },
+                    "products": {
+                        "electron tube": 1
+                    }
+                },
+                "brass funnel": {
+                    "grid_size": "2x2",
+                    "ingredients": {
+                        "dried kelp": 1,
+                        "brass ingot": 1,
+                        "electron tube": 1
+                    },
+                    "products": {
+                        "brass funnel": 1
+                    }
+                },
+                "brass tunnel": {
+                    "grid_size": "3x3",
+                    "ingredients": {
+                        "brass funnel": 2,
+                        "andesite casing": 1
+                    },
+                    "products": {
+                        "brass tunnel": 2
+                    }
+                },
+                "mechanical crafter": {
+                    "grid_size": "3x3",
+                    "ingredients": {
+                        "andesite casing": 1,
+                        "iron ingot": 1,
+                        "electron tube": 1
+                    },
+                    "products": {
+                        "mechanical crafter": 3
+                    }
+                }
+            }
         }
     },
     "infinite resources": {
