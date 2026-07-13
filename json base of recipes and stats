@@ -1460,6 +1460,16 @@
                     "products": {
                         "smart chute": 1
                     }
+                },
+                "wand of symmetry": {
+                    "grid_size": "3x3",
+                    "ingredients": {
+                        "precision mechanism": 1,
+                        "obsidian": 3,
+                        "brass ingot": 2,
+                        "ender pearl": 1,
+                        "glass": 2
+                    }
                 }
             }
         }
