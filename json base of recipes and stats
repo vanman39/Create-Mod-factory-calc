@@ -1269,10 +1269,7 @@
                         "bucket": 1
                     },
                     "products": {
-                        "milk bucket": {
-                            "amount":1,
-                            "milk":true
-                        }
+                        "milk bucket": 1
                     },
                     "byproducts": {
                         "none": 1
@@ -1288,10 +1285,7 @@
                         "bucket": 1
                     },
                     "products": {
-                        "lava bucket": {
-                            "amount": 1,
-                            "lava": true
-                        }
+                        "lava bucket": 1
                     },
                     "byproducts": {
                         "none": 1
@@ -1315,66 +1309,66 @@
                     "heated": false
                 }
             }
-        },
-        "infinite resources": {
-            "renewable": [
-                "cobblestone",
-                "stone",
-                "obsidian",
-                "andesite",
-                "granite",
-                "diorite"
-            ],
-            "mined with drill": [
-                "raw iron",
-                "coal",
-                "raw copper",
-                "raw zinc",
-                "raw gold",
-                "diamond",
-                "emerald",
-                "redstone",
-                "lapis lazuli",
-                "quartz",
-                "ancient debris"
-            ],
-            "farmed": [
-                "logs",
-                "wheat",
-                "sugar cane",
-                "potato",
-                "carrot",
-                "kelp",
-                "pumpkin",
-                "melon",
-                "cocoa beans",
-                "dye",
-                "slimeball",
-                "leather",
-                "raw beef",
-                "raw chicken",
-                "raw mutton",
-                "raw rabbit",
-                "raw porkchop",
-                "raw salmon",
-                "raw cod",
-                "egg",
-                "milk bucket",
-                "bone",
-                "gunpowder",
-                "string",
-                "spider eye",
-                "ender pearl",
-                "blaze rod",
-                "netherrack",
-                "soul sand",
-                "gold nugget",
-                "glowstone dust"
-            ],
-            "fluids": [
-                "water bucket",
-                "milk bucket"
-            ]
         }
+    },
+    "infinite resources": {
+        "renewable": [
+            "cobblestone",
+            "stone",
+            "obsidian",
+            "andesite",
+            "granite",
+            "diorite"
+        ],
+        "mined with drill": [
+            "raw iron",
+            "coal",
+            "raw copper",
+            "raw zinc",
+            "raw gold",
+            "diamond",
+            "emerald",
+            "redstone",
+            "lapis lazuli",
+            "quartz",
+            "ancient debris"
+        ],
+        "farmed": [
+            "logs",
+            "wheat",
+            "sugar cane",
+            "potato",
+            "carrot",
+            "kelp",
+            "pumpkin",
+            "melon",
+            "cocoa beans",
+            "dye",
+            "slimeball",
+            "leather",
+            "raw beef",
+            "raw chicken",
+            "raw mutton",
+            "raw rabbit",
+            "raw porkchop",
+            "raw salmon",
+            "raw cod",
+            "egg",
+            "milk bucket",
+            "bone",
+            "gunpowder",
+            "string",
+            "spider eye",
+            "ender pearl",
+            "blaze rod",
+            "netherrack",
+            "soul sand",
+            "gold nugget",
+            "glowstone dust"
+        ],
+        "fluids": [
+            "water bucket",
+            "milk bucket"
+        ]
     }
 }
