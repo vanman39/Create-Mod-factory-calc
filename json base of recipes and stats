@@ -1278,6 +1278,41 @@
                         "none": 1
                     },
                     "heated": false
+                },
+                "lava bucket": {
+                    "ingredients": {
+                        "lava bucket": {
+                            "amount": 1,
+                            "lava": true
+                        },
+                        "bucket": 1
+                    },
+                    "products": {
+                        "lava bucket": {
+                            "amount": 1,
+                            "lava": true
+                        }
+                    },
+                    "byproducts": {
+                        "none": 1
+                    },
+                    "heated": false
+                },
+                "water bucket": {
+                    "ingredients": {
+                        "water bucket": {
+                            "amount": 1,
+                            "water": true
+                        },
+                        "bucket": 1
+                    },
+                    "products": {
+                        "water bucket": 1
+                    },
+                    "byproducts": {
+                        "none": 1
+                    },
+                    "heated": false
                 }
             }
         },
